@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class JumpTrigger : MonoBehaviour
 {
-    [SerializeField]
-    float trust = 1000f;
+    MoveCamera moveCamera;
 
-    private void OnTriggerEnter(Collider other)
+    private void Awake()
     {
+        moveCamera = GetComponent<MoveCamera>();
 
-        other.transform.GetComponent<Rigidbody>().AddForce(transform.up * trust);
+    }
+    private void OnCollisionEnter()
+    {
+        moveCamera.came = true;
     }
 
 }

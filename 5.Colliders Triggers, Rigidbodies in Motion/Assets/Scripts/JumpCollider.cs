@@ -6,7 +6,7 @@ public class JumpCollider : MonoBehaviour
 {
     [SerializeField]
     float trust = 200f;
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
 
         

@@ -9,7 +9,7 @@ public class MoveCamera : MonoBehaviour
 
     [SerializeField]
     GameObject objPlayer;
-
+    public bool came = false;
     // Start is called before the first frame update
 
 
@@ -17,7 +17,19 @@ public class MoveCamera : MonoBehaviour
     void Update()
     {
         Vector3 currPos = objCamera.transform.position;
-        currPos.y = objPlayer.transform.position.y;
-        objCamera.transform.position = currPos;
+        
+        if (came)
+        {
+            currPos.y = objPlayer.transform.position.y + 10;
+            currPos.x = objPlayer.transform.position.x + 10;
+            objCamera.transform.position = currPos;
+            Debug.Log("pik");
+        }
+        else
+        {
+            currPos.y = objPlayer.transform.position.y;
+            currPos.x = objPlayer.transform.position.x;
+            objCamera.transform.position = currPos;
+        }
     }
 }

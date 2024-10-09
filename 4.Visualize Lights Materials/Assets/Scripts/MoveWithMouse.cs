@@ -5,19 +5,22 @@ using UnityEngine;
 public class MoveWithMouse : MonoBehaviour
 {
     // Start is called before the first frame update
-
+  
     Light childLight;
     void Start()
     {
+        
         if (transform.GetComponentInChildren<Light>() != null)
         {
             childLight = transform.GetComponentInChildren<Light>();
         }
     }
 
+
     // Update is called once per frame
     void Update()
     {
+
 
         childLight.intensity += Input.mouseScrollDelta.y;
 
